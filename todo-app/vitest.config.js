@@ -8,6 +8,8 @@ export default defineConfig({
         environment: 'jsdom',
         setupFiles: './tests/setup.js',
         css: true,
+        // Only run files inside tests/unit/ — prevents Playwright spec files from being picked up
+        include: ['tests/unit/**/*.{test,spec}.{js,jsx}'],
         coverage: {
             provider: 'v8',
             reporter: ['text', 'json', 'html'],
@@ -19,3 +21,4 @@ export default defineConfig({
         },
     },
 })
+

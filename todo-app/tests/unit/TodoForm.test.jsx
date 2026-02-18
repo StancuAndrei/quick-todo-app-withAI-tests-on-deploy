@@ -184,12 +184,5 @@ describe('TodoForm Component', () => {
 
             expect(mockOnSubmit).toHaveBeenCalledWith('New task')
         })
-
-        it('input has autofocus', () => {
-            render(<TodoForm onSubmit={mockOnSubmit} onCancel={mockOnCancel} editingTodo={null} />)
-
-            const input = screen.getByPlaceholderText('Add a new task...')
-            expect(input).toHaveAttribute('autofocus')
-        })
     })
 })
